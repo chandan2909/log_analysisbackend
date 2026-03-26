@@ -1,0 +1,20 @@
+# Build output
+target/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment (sensitive credentials)
+.env
+
+# Maven wrapper (optional, keep if you want)
+# !.mvn/wrapper/maven-wrapper.jar
+
+# Logs
+*.log
