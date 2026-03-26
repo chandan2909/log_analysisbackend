@@ -2,11 +2,9 @@
 FROM maven:3.9-eclipse-temurin-17 AS build
 WORKDIR /app
 COPY pom.xml .
-COPY .mvn .mvn
-COPY mvnw .
-RUN chmod +x mvnw && ./mvnw dependency:resolve -q
+RUN mvn dependency:resolve -q
 COPY src src
-RUN ./mvnw package -DskipTests -q
+RUN mvn package -DskipTests -q
 
 # ---- Stage 2: Run ----
 FROM eclipse-temurin:17-jre-alpine
